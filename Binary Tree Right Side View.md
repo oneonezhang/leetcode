@@ -65,7 +65,7 @@ private:
         if(node==NULL) return;
         if(visitedDepth==result.size()) result.push_back(node->val);
         helper(node->right,result,visitedDepth+1);
-        helper(node->left,result,visitedDepth+1);
+        helper(node->left,result,visitedDepth+1); 
     }
 };
 ```
