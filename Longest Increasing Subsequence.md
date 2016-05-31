@@ -36,6 +36,7 @@ public:
 ```
 ##To Study:
 `Binary Search`, `Variant of Patience Sorting`
+helpArray[i] records the last number of subsequence whose length is i+1
 ```cpp
 class Solution {
 public:
