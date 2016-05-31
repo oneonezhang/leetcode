@@ -18,7 +18,7 @@ case:nums[left]==nums[mid] is different from the original problem,
 since it can be either nums[mid]=nums[mid+1]=...=nums[left] or nums[left]=nums[left+1]=...=nums[mid].  
 We need to check whether the minimum is in the left part or not.  
 Therefore, time complexity will grow when nums[left]==nums[mid]&&minimum is not in the left part.  
-But anyway, it's between O(logn) and 0(n).
+But anyway, it's between O(logn) and O(n).
 ```cpp
 class Solution {
 public:
