@@ -13,7 +13,7 @@ Notes:
 + You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
 
 ##Idea:
-change order when pop and peak
+change order when pop and peek
 ```cpp
 class Queue {
 public:
@@ -67,7 +67,7 @@ private:
     stack<int> innerStack;
 };
 ```
-Time Complexity:push->O(1), pop->O(n), peak->O(n), empty->O(1)  
+Time Complexity:push->O(1), pop->O(n), peek->O(n), empty->O(1)  
 ##To Study:
 1. change order when push
 ```cpp
@@ -109,7 +109,7 @@ private:
     stack<int> innerStack;
 };
 ```
-Time Complexity:push->O(n), pop->O(1), peak->O(1), empty->O(1)    
+Time Complexity:push->O(n), pop->O(1), peek->O(1), empty->O(1)    
   
 2. use 2 stacks: input, output
 ```cpp
@@ -149,4 +149,4 @@ private:
     stack<int> output;
 };
 ```
-Time Complexity:push->O(1), pop->Amortized O(1), peak->Amortized O(1), empty->O(1) 
+Time Complexity:push->O(1), pop->Amortized O(1), peek->Amortized O(1), empty->O(1) 
