@@ -27,3 +27,4 @@ public:
     }
 };
 ```
+**Pay attention to the edge case.**
