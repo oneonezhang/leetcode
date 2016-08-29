@@ -37,41 +37,31 @@ public:
 class Solution {
 public:
     int numSquares(int n) {
-        vector<int> squares;
-        vector<bool> visited(n);
-        for(int i=1;i*i<=n;i++)//get square nums
-        {
-            squares.push_back(i*i);
-        }
-        if(squares.back()==n) return 1;//check if n is square num
-        
-        //BFS
         queue<int> numQueue;
-        for(int currentSquare:squares)
-        {
-            numQueue.push(currentSquare);
-            visited[currentSquare-1]=1;
-        }
-        int numSquare=1;
+        vector<bool> visited(n);
+        numQueue.push(0);
+        int numOfSquare=1;;
         while(!numQueue.empty())
         {
-            numSquare++;
-            int queueSize=numQueue.size();
-            for(int i=0;i<queueSize;i++)
+            int length=numQueue.size();
+            for(int i=0;i<length;i++)
             {
-                int frontElem=numQueue.front();
-                for(int currentSquare:squares)
-                {
-                    int nextElem=frontElem+currentSquare;
-                    if(nextElem==n) return numSquare;
-                    else if(nextElem<n&&visited[nextElem-1]==0){
-                        visited[nextElem-1]=1;
-                        numQueue.push(nextElem);
-                    }
-                    else if(nextElem>n) break;
-                }
+                int current=numQueue.front();
                 numQueue.pop();
+                for(int root=1;root*root<=n;root++)
+                {
+                    int next=current+root*root;
+                    if(next==n) {
+                        return numOfSquare;
+                    }
+                    else if(next<n&&visited[next-1]==0) {
+                        numQueue.push(next);
+                        visited[next-1]=1;
+                    }
+                    else if(next>n) break;
+                }
             }
+            numOfSquare++;
         }
         return 0;
     }
