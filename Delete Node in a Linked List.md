@@ -22,4 +22,4 @@ public:
 };
 ```
 ##To Study:
-1 LOC: *node=*(node->next);
+1 LOC: \*node=\*(node->next);
